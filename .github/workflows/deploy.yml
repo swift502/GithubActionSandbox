@@ -1,12 +1,6 @@
 name: Build And Deploy
 
-on:
-  push:
-    inputs:
-      path:
-        description: "Path of the directory containing your site"
-        required: false
-        default: "."
+on: push
   
 permissions:
   contents: read
@@ -58,16 +52,16 @@ jobs:
       - name: Install
         shell: "bash"
         run: |
-          cd ${{ inputs.path }}
+          cd .
           $node_pm install
       - name: Build
         shell: "bash"
         env:
           PACKAGE_MANAGER: ${{ steps.lockfile.outputs.PACKAGE_MANAGER }}
         run: |
-          cd ${{ inputs.path }}
+          cd .
           $node_pm run build
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "${{ inputs.path }}/dist/"
+          path: "./dist/"
