@@ -1,6 +1,12 @@
 name: Build And Deploy
 
-on: push
+on:
+  push:
+    inputs:
+      path:
+        description: "Path of the directory containing your site"
+        required: false
+        default: "."
   
 permissions:
   contents: read
@@ -10,11 +16,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    inputs:
-      path:
-        description: "Path of the directory containing your site"
-        required: false
-        default: "."
     steps:
       - name: Checkout the repository using git
         uses: actions/checkout@v3
