@@ -7,6 +7,12 @@ permissions:
   pages: write
   id-token: write
 
+inputs:
+  path:
+    description: "Path of the directory containing your site"
+    required: false
+    default: "."
+
 jobs:
   build:
     runs-on: ubuntu-latest
