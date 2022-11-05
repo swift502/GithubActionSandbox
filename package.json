@@ -1,19 +1,16 @@
 {
-  "name": "githubactionsandbox",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/swift502/GithubActionSandbox.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/swift502/GithubActionSandbox/issues"
-  },
-  "homepage": "https://github.com/swift502/GithubActionSandbox#readme"
+  "dependencies": {
+    "astro": "^1.6.0"
+  }
 }
